@@ -2,7 +2,7 @@
 ## jQuery on,off 方法扩展，增加一个参数，实现绑定事件时可以按分组命名，移除事件时可以按分组名批量删除事件
 
  - [GitHub: https://github.com/aiv367/jquery.onoff](https://github.com/aiv367/jquery.onoff)
- - [Demo: https://github.com/aiv367/jquery.onoff](https://github.com/aiv367/jquery.onoff)
+ - [Demo: https://aiv367.github.io/jquery.onoff/demo/](https://aiv367.github.io/jquery.onoff/demo/)
  - [Author：aiv367 (大花猫花大)](mailto:aiv367@qq.com)
 
 ## 说明
