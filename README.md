@@ -5,9 +5,9 @@
  - [Author：aiv367 (大花猫花大)](mailto:aiv367@qq.com)
 
 ## 说明
- - on,off 方法在原有方法基础上，最后增加了一个参数，实现分组命名
+ - on,off 方法在原有方法基础上，增加了一个参数，实现以分组命名方式，绑定、移除事件
+ - 分组命名只能是数字字母下划线
  
-
  ## 更新
  - V1.0.0 [2019/05/24]
 
@@ -24,16 +24,20 @@
  ```html
 <script>
 $('#demo')
-	.on('click', (evt, data)=>{
-		console.log(evt.type, data);
-	}, 'mygroup')
-	.on('click', (evt, data)=>{
-		console.log(evt.type, data);
-	}, 'mygroup')
-	.on('click', (evt, data)=>{
-		console.log(evt.type, data);
+	.on('input', (evt)=>{
+		console.log('oninput1');
+	}, 'myevent')
+	.on('input', (evt)=>{
+		console.log('oninput2');
+	}, 'myevent')
+	.on('input', (evt)=>{
+		console.log('oninput3');
+	})
+	.on('change', (evt)=>{
+		console.log('onchange1');
 	});
 
-$('#demo').off('click', 'mygroup');
+//移除 myevent 分组的事件
+$('#demo').off('input', 'myevent');
 </script>
 ```
