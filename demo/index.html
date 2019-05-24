@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jquery.event.operate Demo</title>
+	<link rel="stylesheet" href="index.css">
+
+	<script src="libs/jquery/jquery.js"></script>
+	<script src="../jquery.onoff.js"></script>
+
+</head>
+<body>
+	<div class="container">
+
+		<h1>jquery.onoff</h1>
+
+		<div class="group">
+			<h1>说明：</h1>
+			<p>请chrome 浏览器 f12，打开调试查看输出结果</p>
+		</div>
+
+		<input type="text" id="demo">
+		<button id="btn">移除 myevent 组事件</button>
+
+	</div>
+
+	<script>
+		$('#demo')
+			.on('input', (evt)=>{
+				console.log('oninput1');
+			}, 'myevent')
+			.on('input', (evt)=>{
+				console.log('oninput2');
+			}, 'myevent')
+			.on('input', (evt)=>{
+				console.log('oninput3');
+			})
+			.on('change', (evt)=>{
+				console.log('onchange1');
+			});
+
+		$('#btn').on('click', evt=>{
+			$('#demo').off('input', 'myevent');
+		});
+
+	</script>
+
+</body>
+</html>
